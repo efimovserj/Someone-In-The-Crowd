@@ -1,27 +1,26 @@
 import React from "react";
 
 export interface CheckboxType {
-  label: string;
-  isChecked?: boolean;
+  children: React.ReactElement | string;
+  isChecked: boolean;
   onChange: (isChecked: boolean) => void;
 }
 
-const Checkbox: React.FC<CheckboxType> = props => {
+const Checkbox: React.FC<CheckboxType> = ({
+  isChecked,
+  children,
+  onChange
+}) => {
   return (
     <label>
       <input
         type="checkbox"
-        onChange={() => props.onChange(!props.isChecked)}
-        checked={props.isChecked}
+        onChange={() => onChange(!isChecked)}
+        checked={isChecked}
       />
-      {props.label}
+      {children}
     </label>
   );
-};
-
-Checkbox.defaultProps = {
-  label: "",
-  isChecked: false
 };
 
 export default Checkbox;
