@@ -1,12 +1,12 @@
 import React from "react";
 
-export interface CheckboxType {
+export interface CheckboxProps {
   children: React.ReactElement | string;
   isChecked: boolean;
   onChange: (isChecked: boolean) => void;
 }
 
-const Checkbox: React.FC<CheckboxType> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   isChecked,
   children,
   onChange
