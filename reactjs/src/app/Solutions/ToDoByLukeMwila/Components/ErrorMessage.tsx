@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import { v5String } from "uuid/interfaces";
 
 const ErrorMessage = styled.p`
   text-align: center;
