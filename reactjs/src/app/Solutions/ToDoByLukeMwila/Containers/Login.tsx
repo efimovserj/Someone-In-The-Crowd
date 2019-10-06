@@ -29,8 +29,8 @@ function Login() {
         "post",
         { email: userEmail, password: userPassword }
       );
-      console.log("userData", userData);
       const { id, email } = userData;
+
       auth.setAuthStatus({ id, email });
     } catch (error) {
       setLoading(false);

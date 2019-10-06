@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import RootContainer from "./Containers/RootContainer";
 
 /** Context API  **/
