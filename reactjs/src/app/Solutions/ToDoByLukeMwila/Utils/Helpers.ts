@@ -56,6 +56,8 @@ export const validateLoginForm = (
 export const getStoredUserAuth = (): UserAuth => {
   const auth = window.localStorage.getItem("UserAuth");
 
+  console.log("auth", auth);
+
   if (auth) {
     return JSON.parse(auth);
   }

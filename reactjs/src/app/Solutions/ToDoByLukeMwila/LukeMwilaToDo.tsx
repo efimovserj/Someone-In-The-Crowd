@@ -4,11 +4,11 @@ import RootContainer from "./Containers/RootContainer";
 /** Context API  **/
 import AuthContextProvider from "./Contexts/AuthContext";
 
-function App() {
+function LukeMwilaToDo() {
   return (
     <AuthContextProvider>
       <RootContainer />
     </AuthContextProvider>
   );
 }
-export default App;
+export default LukeMwilaToDo;

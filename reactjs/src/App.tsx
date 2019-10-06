@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import Checkbox from "./app/Components/Checkbox";
-import RootContainer from "./app/Solutions/ToDoByLukeMwila/Containers/RootContainer";
+import LukeMwilaToDo from "./app/Solutions/ToDoByLukeMwila/LukeMwilaToDo";
 
 const App: React.FC = () => {
-  const [isChecked, handleChange] = useState<boolean>(true);
-
-  const handleFields = (value: boolean) => {
-    handleChange(value);
-  };
-
-  return <RootContainer />;
+  return <LukeMwilaToDo />;
 };
 
 export default App;
