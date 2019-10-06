@@ -7,6 +7,9 @@ import ErrorMessageContainer from "../Components/ErrorMessage";
 /** Custom Hooks **/
 import useErrorHandler from "../Utils/CustomHooks/ErrorHandler";
 
+/**  Context  **/
+import { authContext } from "../Contexts/AuthContext";
+
 /** Utils **/
 import { apiRequest, validateLoginForm } from "../Utils/Helpers";
 import { Header } from "../Components/Styles";
@@ -15,6 +18,7 @@ function Login() {
   const [userEmail, setUserEmail] = React.useState("");
   const [userPassword, setUserPassword] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const auth = React.useContext(authContext);
   const { error, showError } = useErrorHandler(null);
 
   const authHandler = async () => {
@@ -26,6 +30,7 @@ function Login() {
         { email: userEmail, password: userPassword }
       );
       const { id, email } = userData;
+      auth.setAuthStatus({ id, email });
     } catch (error) {
       setLoading(false);
       showError(error.message);

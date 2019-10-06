@@ -1,4 +1,6 @@
 import * as validator from "validator";
+import { UserAuth } from "../CustomTypes";
+import { DEFAULT_USER_AUTH } from "./Const";
 
 /**
  * API Request handler
@@ -48,4 +50,15 @@ export const validateLoginForm = (
   }
 
   return true;
+};
+
+/**  Return user auth from local storage value  **/
+export const getStoredUserAuth = (): UserAuth => {
+  const auth = window.localStorage.getItem("UserAuth");
+
+  if (auth) {
+    return JSON.parse(auth);
+  }
+
+  return DEFAULT_USER_AUTH;
 };
